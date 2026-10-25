@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: convoy-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_convoy_data:/data
+
+volumes:
+  redis_convoy_data:

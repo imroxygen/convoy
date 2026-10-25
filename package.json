@@ -1,0 +1,17 @@
+{
+  "name": "convoy-monorepo",
+  "version": "1.0.0",
+  "description": "Convoy — Real-Time Road Trip Squad Navigator",
+  "scripts": {
+    "start": "npm run build && npm --prefix backend run start",
+    "serve": "npm run build && npm --prefix backend run dev",
+    "dev": "concurrently -n backend,frontend -c green,cyan \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "test:backend": "npm --prefix backend run test",
+    "build": "npm --prefix frontend run build && npm --prefix backend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
